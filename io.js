@@ -37,7 +37,6 @@ module.exports = function(server, lcd) {
             });
             [0,1].forEach(function(i){
               lcd.setCursor(0,i);
-              console.log(str[i]);
               lcd.print(str[i]);
             });
           }, 150);

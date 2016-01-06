@@ -7,7 +7,6 @@ define(function() {
   var _player;
 	var socket = io();
   var update = function() {
-    console.log('update');
     if (!_player.isPlaying) return;
     _player.getAnalyser().getByteFrequencyData(_player.getFrequency());
     _context.clearRect(0, 0, _canvas.width, _canvas.height);
@@ -22,8 +21,8 @@ define(function() {
         5, -0.5 * _player.getFrequency()[i]
       ); // x pos, y pos, width, height
     }
-    window.setTimeout(function() {
-      window.requestAnimationFrame(update)
+    setTimeout(function() {
+      requestAnimationFrame(update)
     }, 1000 / 30)
   }
 
